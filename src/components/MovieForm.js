@@ -22,7 +22,6 @@ const MovieForm = () => {
     const [producer, setProducer] = useState('');
     const [actors, setActors] = useState([]);
     const [poster, setPoster] = useState('');
-    const [newProducerName, setNewProducerName] = useState('');
     const [producerfor,setproducerfrom]=useState(true);
     const [actorfor,setactorfrom] = useState(true)
   
@@ -36,12 +35,7 @@ const MovieForm = () => {
       dispatch(fetchProducers());
       dispatch(fetchActors())
   },[dispatch])
-  const handleProducerChange = (e) => {
-    const selectedProducer = producers.find((producer) => producer._id === e.target.value);
-    if (selectedProducer) {
-      setProducerDetails(selectedProducer);
-    }
-  };
+  
     const handleActorChange = (e, index) => {
       const updatedActors = [...actors];
       updatedActors[index] = e.target.value;
